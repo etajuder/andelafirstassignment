@@ -27,5 +27,31 @@ module.exports = {
                }else{
                    return num;
                }
+  },
+
+  aritGeo:function(arr){
+    var is_arit = false;
+    var is_geo = false;
+    var diff = arr[1] - arr[0];
+    var ratio = arr[1] / arr[0];
+    if(arr.length !== 0){
+    for(var i = 2; i <= arr.length; i++){
+
+        if(arr[i] - arr[i-1] === diff){
+          ís_arit = true;
+          return "Arithmetic";
+
+  } else if(arr[i] / arr[i-1] === ratio){
+    is_geo = true;
+    return "Geometric";
+
+  } else if(!is_arit && !is_geo){
+    return -1;
   }
+  }
+}else{
+  return 0;
+}
+
+}
 }
